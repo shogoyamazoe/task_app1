@@ -1,50 +1,44 @@
 <h3>スケジュール内容</h3>
+
 <%= render "shared/error",obj: @post %>
 
 <% if flash.now[:notice] %>
   <p class ="notice"><%= flash.now[:notice] %></p>
-  <% end %>
-
+<% end %>
 
 <%= form_with model: @post,local: true do |f| %>
-
   <table>
-      <tr>
-        <th><%= f.label :title ,"タイトル" %></th>
-       
-        <td><%= f.text_field :title %></td>
-      </tr>
+    <tr>
+      <th><%= f.label :title ,"タイトル" %></th> 
+      <td><%= f.text_field :title %></td>
+    </tr>
 
-      <tr>
-        <th><%= f.label :startdate ,"開始日" %></th>
-        <td><%= f.date_field :startdate %></td>
-        
-      </tr>
+    <tr>
+      <th><%= f.label :startdate ,"開始日" %></th>
+      <td><%= f.date_field :startdate %></td>    
+    </tr>
 
-      <tr>
-        <th><%= f.label :enddate ,"終了日" %></th>
-        <td><%= f.date_field :enddate %></td>
+    <tr>
+      <th><%= f.label :enddate ,"終了日" %></th>
+      <td><%= f.date_field :enddate %></td>
+    </tr>
 
-      </tr>
-
-      <tr>
-        <th><%= f.label :check ,"終日" %></th>
-        <td><%= f.check_box 'check',{} %> 
-        
-      </tr>
+    <tr>
+      <th><%= f.label :check ,"終日" %></th>
+      <td><%= f.check_box 'check',{} %>     
+    </tr>
       
-      <tr>
-        <th><%= f.label :memo ,"メモ" %></th>
-        <td><%= f.text_area 'memo',{} %> 
-        
-      </tr>
+    <tr>
+      <th><%= f.label :memo ,"メモ" %></th>
+      <td><%= f.text_area 'memo',{} %>     
+    </tr>
 
-    </table>
+  </table>
 
-    <div>
-      <ul>
-        <li><%= f.submit "編集完了"%></li>
-        <li><%= link_to "スケジュール情報一覧に戻る", :posts %></li>
-      </ul>
-    </div>
-  <% end %>
+  <div>
+    <ul>
+      <li><%= f.submit "編集完了"%></li>
+      <li><%= link_to "スケジュール情報一覧に戻る", :posts %></li>
+    </ul>
+  </div>
+<% end %>

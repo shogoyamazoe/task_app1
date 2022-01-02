@@ -30,11 +30,11 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 ja:
-      activerecord:
-        models:
-          post: 投稿
-        attributes:
-          post:
-            title: タイトル
-            startdate: 開始日
-            enddate: 終了日
+  activerecord:
+    models:
+      post: 投稿
+    attributes:
+      post:
+      title: タイトル
+      startdate: 開始日
+      enddate: 終了日

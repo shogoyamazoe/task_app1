@@ -1,8 +1,7 @@
 class PostsController < ApplicationController
   def index
     @post = Post.all
-    @cont = Post.count
-    
+    @cont = Post.count 
   end
 
   def new
@@ -11,13 +10,13 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(params.require(:post).permit(:title,:startdate,:enddate,:check,:memo))
-    if @post.save
-      flash[:notice] = "スケジュール登録しました"
-      redirect_to :posts
-    else
-      flash.now[:notice] = "スケジュール登録できませんでした"
-       render 'new'
-    end
+      if @post.save
+        flash[:notice] = "スケジュール登録しました"
+        redirect_to :posts
+      else
+        flash.now[:notice] = "スケジュール登録できませんでした"
+        render 'new'
+      end
   end
 
   def show
@@ -30,12 +29,12 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.update(params.require(:post).permit(:title,:startdate,:enddate,:check,:memo)) 
-      flash[:notice] = "スケジュールID『#{@post.id}』の内容が更新されました"
-      redirect_to :posts
-    else
-      render 'edit'
-    end
+      if @post.update(params.require(:post).permit(:title,:startdate,:enddate,:check,:memo)) 
+        flash[:notice] = "スケジュールID『#{@post.id}』の内容が更新されました"
+        redirect_to :posts
+      else
+        render 'edit'
+      end
   end
 
   def destroy

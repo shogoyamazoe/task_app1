@@ -6,7 +6,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.date :enddate
       t.boolean :check
       t.text :memo
-
+      
       t.timestamps
     end
   end

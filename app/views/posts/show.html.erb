@@ -5,25 +5,29 @@
     <th>タイトル</th>
     <td><%= @post.title %></td>
   </tr>
+
   <tr>
     <th>開始日</th>
     <td><%= @post.startdate %></td>
   </tr>
+
   <tr>
     <th>終了日時</th>
     <td><%= @post.enddate %></td>
   </tr>
+
   <tr>
     <th>更新日時</th>
     <td><%= @post.updated_at.to_s(:datetime_jp) %></td>
   </tr>
+
   <tr>
     <th>終日</th>
-    <td><% @post.check %>
-     <% if @post.check  %>
-     ○
-     <% else @post.check ==  false %>
-     <% end %></td>
+      <td><% @post.check %>
+        <% if @post.check  %>
+          ○
+          <% else @post.check ==  false %>
+        <% end %></td>
   </tr>
   <tr>
     <th>メモ</th>
