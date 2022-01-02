@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TaskApp1</title>
+    <title>MYスケジュール管理アプリ</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,24 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <h1> My スケジュール管理アプリ </h1>
+    </header>
+  
+      <%= yield %>
+
+    <footer>
+
+    <h1>現在の日時：<%=  date = Time.now.to_s(:datetime_jp)%> </h1>
+    <% case controller.action_name %>    
+    <% when "index" %>
+    <div class = "contener">
+        <h1>スケジュール合計:<%= @cont %></h1>
+      </div>
+    <% else %>
+      
+    <% end %>
+    
+    </footer>
   </body>
 </html>
